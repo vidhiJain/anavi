@@ -1,0 +1,84 @@
+data:
+  data_path: /data/anp_data_full-500/  # 
+  eval_batch_size: 500
+  train_batch_size: 500
+  load_images: false
+  shard_folders:
+    - "/data/mp3d_shard_data/anp_shard-10_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-11_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-12_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-13_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-14_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-15_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-16_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-17_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-18_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-19_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-20_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-21_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-22_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-23_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-24_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-25_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-26_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-27_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-28_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-2_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-30_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-32_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-33_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-34_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-35_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-36_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-37_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-3_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-41_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-42_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-43_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-44_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-45_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-46_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-47_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-48_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-49_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-4_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-50_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-51_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-52_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-53_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-54_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-55_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-56_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-57_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-59_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-5_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-6_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-7_samples-100"
+    - "/data/mp3d_shard_data/anp_shard-8_samples-100"
+device: cuda:1
+epochs: 100
+chkpt_dir: "/data/checkpoints/"
+chkpt_path: "resume_dirdis_mse_large.pth"
+model:
+  classname: DirDis
+  use_regression: true
+  layer_sizes: 
+  - 2
+  - 8
+  - 8
+  - 1
+optim:
+  lr: 0.01
+scheduler:
+  step_size: 2000
+  gamma: 0.995
+criterion:
+  classname: HuberLoss
+  delta: 0.1
+  reduction: mean
+patience: 2500
+resume_training: false
+summary_interval: 100
+wandb:
+  dir: /data/wandb
+  project: anavi

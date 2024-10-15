@@ -1,0 +1,28 @@
+chkpt_dir: /data/vdj/ss/checkpoints/
+chkpt_path: tmp.pth
+data:
+  data_path: /data/vdj/ss/anp_data_full-500/
+  eval_batch_size: 32
+  train_batch_size: 64
+device: cuda:1
+epochs: 100
+logging:
+  chkpt_dir: /data/vdj/ss/checkpoints/
+  chkpt_path: resume_visual_ce_trainer.pth
+model:
+  mean_pool_visual: true
+  num_bins: 128
+  use_depth: true
+  use_regression: false
+  use_rgb: true
+optim:
+  lr: 0.01
+patience: 25
+resume_training: false
+scheduler:
+  gamma: 0.1
+  step_size: 10
+summary_interval: 100
+wandb:
+  dir: /scratch/vdj/wandb
+  project: anavi
