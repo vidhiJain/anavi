@@ -24,3 +24,15 @@ You can train your own model by modifying `config_template.yaml`.
 
 1. Evaluate 
 ```python train.py --config=configs/visdirdis_ce.yaml```
+
+# Cite 
+```
+@article{jain2024anavi,
+  author    = {Jain, Vidhi and Veerapaneni, Rishi and Bisk, Yonatan},
+  title     = {ANAVI: Audio Noise Awareness using Visuals of Indoor environments for NAVIgation},
+  journal   = {8th Annual Conference on Robot Learning},
+  year      = {2024},
+}
+```
+# Contact Us
+If you have questions or concerns, you can raise an issue or email vidhij@andrew.cmu.edu.
