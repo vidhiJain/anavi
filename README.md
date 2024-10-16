@@ -1,4 +1,8 @@
-# ANAVI: Audio Noise Awareness using Visuals of Indoor environments for NAVIgation
+# ANAVI
+
+ANAVI is a framework for "Audio Noise Awareness using Visuals of Indoor environments for NAVIgation". This is presented at 8th Annual Conference on Robot Learning, 2024. 
+
+Website: https://anavi-corl24.github.io
 
 
 # Setup 
